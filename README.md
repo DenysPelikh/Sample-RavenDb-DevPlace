@@ -1,3 +1,3 @@
-# Sample.RavenDb.DevPlace
+# Sample-RavenDb-DevPlace
 Samples of RavenDb
 ### Status: Sample

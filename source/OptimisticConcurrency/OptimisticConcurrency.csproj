@@ -33,7 +33,20 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Raven.Abstractions, Version=3.5.3.0, Culture=neutral, PublicKeyToken=37f41c7f99471593, processorArchitecture=MSIL">
+      <HintPath>..\packages\RavenDB.Database.3.5.3\lib\net45\Raven.Abstractions.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Raven.Client.Lightweight, Version=3.5.3.0, Culture=neutral, PublicKeyToken=37f41c7f99471593, processorArchitecture=MSIL">
+      <HintPath>..\packages\RavenDB.Client.3.5.3\lib\net45\Raven.Client.Lightweight.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Raven.Database, Version=3.5.3.0, Culture=neutral, PublicKeyToken=37f41c7f99471593, processorArchitecture=MSIL">
+      <HintPath>..\packages\RavenDB.Database.3.5.3\lib\net45\Raven.Database.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -43,11 +56,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Handlers\ITransactionHandler.cs" />
+    <Compile Include="TransactionManager.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Handlers\SafeConcurrencyHandler.cs" />
+    <Compile Include="SetupRavenDb.cs" />
+    <Compile Include="TestEntity.cs" />
+    <Compile Include="Handlers\TransactionHandler.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="..\packages\RavenDB.Database.3.5.3\tools\Raven.Studio.Html5.zip">
+      <Link>Raven.Studio.Html5.zip</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="App.config" />
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
